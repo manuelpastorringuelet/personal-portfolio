@@ -1,13 +1,16 @@
-import { groq } from "next-sanity";
+import { QueryParams, groq } from "next-sanity";
 import { client } from "./lib/client";
 
+const revalidationOptions = { next: { revalidate: 10 } };
+const DEFAULT_PARAMS = {} as QueryParams;
+
 export async function getProfile() {
-  return client.fetch(
-    groq`*[_type == "profile"]{
+  const query = groq`
+    *[_type == "profile"]{
       _id,
       fullName,
       headline,
-      profileImage {alt, "image": asset->url},
+      profileImage { alt, "image": asset->url },
       shortBio,
       location,
       fullBio,
@@ -15,13 +18,15 @@ export async function getProfile() {
       "resumeURL": resumeURL.asset->url,
       socialLinks,
       skills
-    }`
-  );
+    }
+  `;
+
+  return client.fetch(query, DEFAULT_PARAMS, revalidationOptions);
 }
 
 export async function getJob() {
-  return client.fetch(
-    groq`*[_type == "job"]{
+  const query = groq`
+    *[_type == "job"]{
       _id,
       name,
       jobTitle,
@@ -29,33 +34,38 @@ export async function getJob() {
       url,
       description,
       startDate,
-      endDate,
-    }`
-  );
+      endDate
+    }
+  `;
+
+  return client.fetch(query, DEFAULT_PARAMS, revalidationOptions);
 }
 
 export async function getProjects() {
-  return client.fetch(
-    groq`*[_type == "project"]{
+  const query = groq`
+    *[_type == "project"]{
       _id, 
       name,
       "slug": slug.current,
       tagline,
-      "logo": logo.asset->url,
-    }`
-  );
+      "logo": logo.asset->url
+    }
+  `;
+
+  return client.fetch(query, DEFAULT_PARAMS, revalidationOptions);
 }
 
 export async function getSingleProject(slug: string) {
-  return client.fetch(
-    groq`*[_type == "project" && slug.current == $slug][0]{
+  const query = groq`
+    *[_type == "project" && slug.current == $slug][0]{
       _id,
       name,
       projectUrl,
       coverImage { alt, "image": asset->url },
       tagline,
       description
-    }`,
-    { slug }
-  );
+    }
+  `;
+
+  return client.fetch(query, { slug }, revalidationOptions);
 }
