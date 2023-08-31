@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Manuel Ringuelet - Portfolio",
   description: "A personal portfolio site built with Sanity and Next.js",
   openGraph: {
-    images: "@/public/images/backgrounds.jpg",
+    images: "@/public/images/open-graph-image.jpeg",
   },
 };
 
