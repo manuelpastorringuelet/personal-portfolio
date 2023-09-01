@@ -60,6 +60,18 @@ const project = {
       description: "Write a full description about this project",
       of: [{ type: "block" }],
     },
+    {
+      name: "startDate",
+      title: "Start Date",
+      type: "date",
+      description: "When did you start this project?",
+    },
+    {
+      name: "endDate",
+      title: "End Date",
+      type: "date",
+      description: "When did you end this project?",
+    },
   ],
 };
 

@@ -40,4 +40,6 @@ export type ProjectType = {
     image: string;
   };
   description: PortableTextBlock[];
+  startDate: Date;
+  endDate: Date;
 };

@@ -6,6 +6,12 @@ import type { ProjectType } from "@/types";
 export default async function Project() {
   const projects: ProjectType[] = await getProjects();
 
+  projects.sort((a, b) => {
+    const dateA = new Date(a.startDate).getTime();
+    const dateB = new Date(b.startDate).getTime();
+    return dateB - dateA;
+  });
+
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <section className="max-w-2xl mb-16">

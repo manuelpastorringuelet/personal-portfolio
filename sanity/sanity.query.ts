@@ -48,7 +48,8 @@ export async function getProjects() {
       name,
       "slug": slug.current,
       tagline,
-      "logo": logo.asset->url
+      "logo": logo.asset->url,
+      startDate
     }
   `;
 
