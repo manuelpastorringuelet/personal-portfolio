@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import Logo from "../../icons/logo.png";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navbar() {
   return (
@@ -14,7 +16,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/about"
-                className="hover:text-purple-400 duration-300"
+                className="dark:hover:text-purple-400 hover:text-purple-800  duration-300"
               >
                 About
               </Link>
@@ -22,13 +24,14 @@ export default function Navbar() {
             <li>
               <Link
                 href="/projects"
-                className="hover:text-purple-400 duration-300"
+                className="dark:hover:text-purple-400 hover:text-purple-600 duration-300"
               >
                 Projects
               </Link>
             </li>
           </ul>
         </nav>
+        <ModeToggle />
       </div>
     </header>
   );

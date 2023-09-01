@@ -2,6 +2,8 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 import Navbar from "./components/global/navbar";
 import Footer from "./components/global/footer";
 
@@ -22,10 +24,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-white`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body
+        className={`${inter.className} bg-white dark:bg-zinc-900 dark:text-white`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          storageKey="portfolio-theme"
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
