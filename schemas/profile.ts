@@ -16,9 +16,23 @@ const profile = {
     defineField({
       name: "headline",
       title: "Headline",
-      type: "string",
+      type: "object",
       description: "In one short sentence, what do you do?",
-      validation: (Rule) => Rule.required().min(40).max(50),
+      validation: (rule) => rule.required(),
+      fields: [
+        {
+          title: "English",
+          name: "en",
+          type: "string",
+          validation: (Rule) => Rule.min(40).max(50),
+        },
+        {
+          title: "Spanish",
+          name: "es",
+          type: "string",
+          validation: (Rule) => Rule.min(40).max(50),
+        },
+      ],
     }),
     {
       name: "profileImage",
@@ -37,8 +51,21 @@ const profile = {
     {
       name: "shortBio",
       title: "Short Bio",
-      type: "text",
-      rows: 4,
+      type: "object",
+      fields: [
+        {
+          title: "English",
+          name: "en",
+          type: "text",
+          rows: 4,
+        },
+        {
+          title: "Spanish",
+          name: "es",
+          type: "text",
+          rows: 4,
+        },
+      ],
     },
     {
       name: "email",
@@ -79,7 +106,6 @@ const profile = {
           type: "url",
           initialValue: "https://linkedin.com/in/",
         },
-
       ],
       options: {
         collapsed: false,

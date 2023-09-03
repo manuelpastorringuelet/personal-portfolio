@@ -9,7 +9,7 @@ export async function getProfile() {
     *[_type == "profile"]{
       _id,
       fullName,
-      headline,
+      headline { en, es},
       profileImage { alt, "image": asset->url },
       shortBio,
       location,
