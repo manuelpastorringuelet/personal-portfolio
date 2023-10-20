@@ -1,39 +1,25 @@
-import { defineField } from "sanity";
+import { defineType } from "sanity";
 import { BiUser } from "react-icons/bi";
 
-const profile = {
+export default defineType({
   name: "profile",
   title: "Profile",
   type: "document",
   icon: BiUser,
   fields: [
-    defineField({
+    {
       name: "fullName",
       title: "Full Name",
       type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "headline",
       title: "Headline",
       type: "object",
       description: "In one short sentence, what do you do?",
-      validation: (rule) => rule.required(),
-      fields: [
-        {
-          title: "English",
-          name: "en",
-          type: "string",
-          validation: (Rule) => Rule.min(40).max(50),
-        },
-        {
-          title: "Spanish",
-          name: "es",
-          type: "string",
-          validation: (Rule) => Rule.min(40).max(50),
-        },
-      ],
-    }),
+      validation: (Rule) => Rule.required().min(40).max(50),
+    },
     {
       name: "profileImage",
       title: "Profile Image",
@@ -121,6 +107,4 @@ const profile = {
       of: [{ type: "string" }],
     },
   ],
-};
-
-export default profile;
+});
