@@ -54,4 +54,4 @@ export default defineType({
       media: "logo",
     },
   },
-});
+
