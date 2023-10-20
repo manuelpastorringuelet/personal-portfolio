@@ -1,36 +1,38 @@
 import { PortableTextBlock } from "sanity";
 
-export type ProfileType = {
+type Language = Record<"en" | "es", string>;
+
+interface BaseItemType {
   _id: string;
+  name: string;
+}
+
+export interface ProfileType extends BaseItemType {
   fullName: string;
-  headline: string;
+  headline: Language;
   profileImage: {
     alt: string;
     image: string;
   };
-  shortBio: string;
+  shortBio: Language;
   email: string;
   fullBio: PortableTextBlock[];
   location: string;
   resumeURL: string;
   socialLinks: string[];
   skills: string[];
-};
+}
 
-export type JobType = {
-  _id: string;
-  name: string;
+export interface JobType extends BaseItemType {
   jobTitle: string;
   logo: string;
   url: string;
   description: string;
   startDate: Date;
   endDate: Date;
-};
+}
 
-export type ProjectType = {
-  _id: string;
-  name: string;
+export interface ProjectType extends BaseItemType {
   slug: string;
   tagline: string;
   projectUrl: string;
@@ -42,4 +44,4 @@ export type ProjectType = {
   description: PortableTextBlock[];
   startDate: Date;
   endDate: Date;
-};
+}

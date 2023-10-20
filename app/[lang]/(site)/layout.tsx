@@ -1,4 +1,4 @@
-import "../globals.css";
+import "../../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -19,8 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
     <html lang="en">
