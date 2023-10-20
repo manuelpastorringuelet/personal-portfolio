@@ -1,25 +1,25 @@
-import { defineField } from "sanity";
+import { defineType } from "sanity";
 import { BiUser } from "react-icons/bi";
 
-const profile = {
+export default defineType({
   name: "profile",
   title: "Profile",
   type: "document",
   icon: BiUser,
   fields: [
-    defineField({
+    {
       name: "fullName",
       title: "Full Name",
       type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "headline",
       title: "Headline",
       type: "string",
       description: "In one short sentence, what do you do?",
       validation: (Rule) => Rule.required().min(40).max(50),
-    }),
+    },
     {
       name: "profileImage",
       title: "Profile Image",
@@ -79,7 +79,6 @@ const profile = {
           type: "url",
           initialValue: "https://linkedin.com/in/",
         },
-
       ],
       options: {
         collapsed: false,
@@ -95,6 +94,4 @@ const profile = {
       of: [{ type: "string" }],
     },
   ],
-};
-
-export default profile;
+});
