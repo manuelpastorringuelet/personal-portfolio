@@ -16,7 +16,7 @@ export default defineType({
     {
       name: "headline",
       title: "Headline",
-      type: "object",
+      type: "string",
       description: "In one short sentence, what do you do?",
       validation: (Rule) => Rule.required().min(40).max(50),
     },
@@ -37,21 +37,8 @@ export default defineType({
     {
       name: "shortBio",
       title: "Short Bio",
-      type: "object",
-      fields: [
-        {
-          title: "English",
-          name: "en",
-          type: "text",
-          rows: 4,
-        },
-        {
-          title: "Spanish",
-          name: "es",
-          type: "text",
-          rows: 4,
-        },
-      ],
+      type: "string",
+      description: "Write a short bio about yourself",
     },
     {
       name: "email",

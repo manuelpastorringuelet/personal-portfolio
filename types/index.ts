@@ -1,7 +1,5 @@
 import { PortableTextBlock } from "sanity";
 
-type Language = Record<"en" | "es", string>;
-
 interface BaseItemType {
   _id: string;
   name: string;
@@ -9,12 +7,12 @@ interface BaseItemType {
 
 export interface ProfileType extends BaseItemType {
   fullName: string;
-  headline: Language;
+  headline: string;
   profileImage: {
     alt: string;
     image: string;
   };
-  shortBio: Language;
+  shortBio: string;
   email: string;
   fullBio: PortableTextBlock[];
   location: string;
