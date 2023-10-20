@@ -4,8 +4,10 @@ import type { ProfileType } from "@/types";
 
 import HeroSvg from "./icons/HeroSvg";
 import Job from "./components/job";
+import Typewriter from "@/components/type-writer";
+import { dictionary } from "@/content";
 
-export default async function Home() {
+export default async function Home({ params }: { params: { lang: string } }) {
   const profile: ProfileType[] = await getProfile();
 
   return (
@@ -15,10 +17,10 @@ export default async function Home() {
           profile.map((data) => (
             <div key={data._id} className="lg:max-w-2xl max-w-2xl">
               <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
-                {data.headline}
+                <Typewriter />
               </h1>
               <p className="text-base text-zinc-400 leading-relaxed">
-                {data.shortBio}
+                {dictionary[params.lang]?.shortBio}
               </p>
               <ul className="flex items-center gap-x-6 my-10">
                 {Object.entries(data.socialLinks)
