@@ -1,6 +1,7 @@
 import { BiBriefcase } from "react-icons/bi";
+import { defineType } from "sanity";
 
-const job = {
+export default defineType({
   name: "job",
   title: "Job",
   type: "document",
@@ -46,6 +47,11 @@ const job = {
       type: "date",
     },
   ],
-};
-
-export default job;
+  preview: {
+    select: {
+      title: "name",
+      subtitle: "jobTitle",
+      media: "logo",
+    },
+  },
+});

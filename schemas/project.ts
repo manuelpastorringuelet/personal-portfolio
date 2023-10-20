@@ -1,7 +1,7 @@
 import { BiPackage } from "react-icons/bi";
-import { defineField } from "sanity";
+import { defineType } from "sanity";
 
-const project = {
+export default defineType({
   name: "project",
   title: "Project",
   description: "Project Schema",
@@ -14,21 +14,21 @@ const project = {
       type: "string",
       description: "Enter the name of the project",
     },
-    defineField({
+    {
       name: "tagline",
       title: "Tagline",
       type: "string",
-      validation: (rule) => rule.max(60).required(),
-    }),
-    defineField({
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       description:
         "Add a custom slug for the URL or generate one from the name",
       options: { source: "name" },
-      validation: (rule) => rule.required(),
-    }),
+      validation: (Rule) => Rule.required(),
+    },
     {
       name: "logo",
       title: "Project Logo",
@@ -73,6 +73,4 @@ const project = {
       description: "When did you end this project?",
     },
   ],
-};
-
-export default project;
+});
