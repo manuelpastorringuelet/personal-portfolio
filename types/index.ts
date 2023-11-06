@@ -34,6 +34,7 @@ export interface ProjectType extends BaseItemType {
   slug: string;
   tagline: string;
   projectUrl: string;
+  githubUrl: string;
   logo: string;
   coverImage: {
     alt: string | null;

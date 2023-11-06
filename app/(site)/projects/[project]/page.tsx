@@ -38,14 +38,28 @@ export default async function Project({ params }: Props) {
           <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4">
             {project.name}
           </h1>
-
-          <a
-            href={project.projectUrl}
-            rel="noreferrer noopener"
-            className="bg-slate-100 dark:bg-[#1d1d20] dark:text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
-          >
-            Explore
-          </a>
+          <div className="space-x-2">
+            {project.projectUrl && (
+              <a
+                target="_blank"
+                href={project.projectUrl}
+                rel="noreferrer noopener"
+                className="bg-slate-100 dark:bg-[#1d1d20] dark:text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
+              >
+                Explore
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                target="_blank"
+                href={project.githubUrl}
+                rel="noreferrer noopener"
+                className="bg-slate-100 dark:bg-[#1d1d20] dark:text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
+              >
+                Repository
+              </a>
+            )}
+          </div>
         </div>
 
         <Image

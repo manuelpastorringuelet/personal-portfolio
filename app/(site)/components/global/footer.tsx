@@ -12,7 +12,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Prepared by{" "}
+            Made by{" "}
             <span className="text-green-400">Manuel Pastor Ringuelet</span>
           </a>
         </small>

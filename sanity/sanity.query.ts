@@ -62,6 +62,7 @@ export async function getSingleProject(slug: string) {
       _id,
       name,
       projectUrl,
+      githubUrl,
       coverImage { alt, "image": asset->url },
       tagline,
       description
