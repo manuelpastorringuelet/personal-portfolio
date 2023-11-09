@@ -6,8 +6,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Navbar() {
   return (
-    <header className="py-6 md:px-16 px-6 border-b border-zinc-800 z-30 md:mb-14 mb-10">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <header className="py-6 border-b border-zinc-800 z-30 md:mb-14 mb-10">
+      <div className="container max-w-6xl flex items-center justify-between">
         <Link href="/">
           <Image
             src={Logo}

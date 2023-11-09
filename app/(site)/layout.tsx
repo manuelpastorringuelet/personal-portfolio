@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white dark:bg-zinc-900 dark:text-white`}
+        className={`${inter.className} bg-white dark:bg-zinc-900 dark:text-white h-screen flex flex-col overflow-y-auto overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"

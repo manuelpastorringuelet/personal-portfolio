@@ -8,15 +8,15 @@ export default async function About() {
   const profile: ProfileType[] = await getProfile();
 
   return (
-    <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
+    <main className="container max-w-6xl">
       {profile &&
         profile.map((data) => (
           <div key={data._id}>
             <section className="grid lg:grid-cols-2 grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8">
-                  I&apos;m {data.fullName}. I live in {data.location}, where I
-                  design the future.
+                <h1 className="lg:text-5xl text-2xl sm:text-4xl lg:leading-tight basis-1/2 font-bold sm:mb-8 mb-4">
+                  I&apos;m {data.fullName}. I live in {data.location.trim()},
+                  where I design the future.
                 </h1>
 
                 <div className="flex flex-col gap-y-3 text-zinc-400 leading-relaxed">
@@ -57,11 +57,11 @@ export default async function About() {
               </div>
             </section>
 
-            <section className="mt-24 max-w-2xl">
+            <section className="sm:mt-20 mt-12 max-w-2xl">
               <h2 className="font-semibold text-4xl mb-4">Expertise</h2>
               <p className="text-zinc-400 max-w-lg">
-                I&apos;ve spent few some time working on my skills. In no particular
-                order, here are a few of them.
+                I&apos;ve spent few some time working on my skills. In no
+                particular order, here are a few of them.
               </p>
 
               <ul className="flex flex-wrap items-center gap-3 mt-8">

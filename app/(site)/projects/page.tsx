@@ -13,12 +13,12 @@ export default async function Project() {
   });
 
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
-      <section className="max-w-2xl mb-16">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight">
-          Featured projects I&apos;ve built over the years
+    <main className="container max-w-6xl flex flex-col flex-grow">
+      <section className="max-w-5xl">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight">
+          Featured projects I&apos;ve built over the time
         </h1>
-        <p className="text-base text-zinc-400 leading-relaxed">
+        <p className="text-base text-zinc-400 leading-relaxed mb-6">
           I&apos;ve worked on tons of little projects over the time but these
           are the ones that I&apos;m most proud of. Many of them are
           open-source, so if you see something that piques your interest, check

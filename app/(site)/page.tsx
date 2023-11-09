@@ -10,12 +10,12 @@ export default async function Home() {
   const profile: ProfileType[] = await getProfile();
 
   return (
-    <main className="max-w-7xl mx-auto lg:px-16 px-6">
-      <section className="flex xl:flex-row flex-col xl:items-center items-start justify-between gap-x-10 lg:mt-16 mt-20">
+    <main className="container max-w-6xl">
+      <section className="flex xl:flex-row flex-col  items-start justify-between gap-x-2">
         {profile &&
           profile.map((data) => (
-            <div key={data._id} className="lg:max-w-xl max-w-2xl">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
+            <div key={data._id} className="max-w-4xl">
+              <h1 className="text-2xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight self-start">
                 <Typewriter />
               </h1>
               <p className="text-base text-zinc-400 leading-relaxed">
@@ -28,7 +28,7 @@ export default async function Home() {
                     <li key={id}>
                       <a
                         href={value}
-                        rel="noreferer noopener"
+                        rel="noreferrer noopener"
                         className="flex items-center gap-x-3 mb-5 hover:text-purple-400 duration-300"
                       >
                         {key[0].toUpperCase() + key.toLowerCase().slice(1)}
@@ -41,8 +41,8 @@ export default async function Home() {
         <Image
           // className="dark:invert invert-0"
           src={"/bendy.png"}
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           alt={"bendy"}
         />
       </section>
