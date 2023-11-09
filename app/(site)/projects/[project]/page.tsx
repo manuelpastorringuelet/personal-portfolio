@@ -46,7 +46,7 @@ export default async function Project({ params }: Props) {
                 rel="noreferrer noopener"
                 className="bg-slate-100 dark:bg-[#1d1d20] dark:text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
               >
-                Explore
+                Website
               </a>
             )}
             {project.githubUrl && (
